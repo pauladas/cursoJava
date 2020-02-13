@@ -1,0 +1,6 @@
+cd cursoJava
+git branch -b secao_{numero}
+cp -R ../Exercicios_curso/* ./
+git add --all
+git commit -m "Exercicio da secao {numero}"
+git push
