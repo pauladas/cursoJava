@@ -12,33 +12,37 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
-		Set<Integer> set = new HashSet<>();
+		Set<Integer> a = new HashSet<>();
+		Set<Integer> b = new HashSet<>();
+		Set<Integer> c = new HashSet<>();
+		Set<Integer> total = new HashSet<>();
 
-		Integer loop = 3;
-
-		while (loop > 0) {
-			String course;
-			if (loop == 3) {
-				course = "A";
-			} else if (loop == 2) {
-				course = "B";
-			} else {
-				course = "C";
-			}
-			System.out.print("How many students for course " + course + "? ");
-			Integer nStudents = sc.nextInt();
-
-			while (nStudents > 0) {
-				Integer n = sc.nextInt();
-				set.add(n);
-				nStudents--;
-			}
-			
-			loop--;
-
+		System.out.print("How many students for course A? ");
+		Integer nStudents = sc.nextInt();
+		for (int i = 0; i < nStudents; i++) {
+			int num = sc.nextInt();
+			a.add(num);
 		}
 
-		System.out.println("Total students: " + set.size());
+		System.out.print("How many students for course B? ");
+		nStudents = sc.nextInt();
+		for (int i = 0; i < nStudents; i++) {
+			int num = sc.nextInt();
+			b.add(num);
+		}
+
+		System.out.print("How many students for course C? ");
+		nStudents = sc.nextInt();
+		for (int i = 0; i < nStudents; i++) {
+			int num = sc.nextInt();
+			c.add(num);
+		}
+
+		total.addAll(a);
+		total.addAll(b);
+		total.addAll(c);
+
+		System.out.println("Total students: " + total.size());
 
 		sc.close();
 
